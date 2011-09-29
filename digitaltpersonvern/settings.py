@@ -1,10 +1,14 @@
 # Django settings for digitaltpersonvern project.
 
 import json
-with open('/home/dotcloud/environment.json') as f:
-  env = json.load(f)
+import os
+try:
+    with open(os.path.expanduser('~/environment.json')) as f:
+        env = json.load(f)
+except:
+    env = None
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -13,16 +17,17 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'template1',
-        'USER': env['DOTCLOUD_DB_SQL_LOGIN'],
-        'PASSWORD': env['DOTCLOUD_DB_SQL_PASSWORD'],
-        'HOST': env['DOTCLOUD_DB_SQL_HOST'],
-        'PORT': int(env['DOTCLOUD_DB_SQL_PORT']),
+if env:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'template1',
+            'USER': env['DOTCLOUD_DB_SQL_LOGIN'],
+            'PASSWORD': env['DOTCLOUD_DB_SQL_PASSWORD'],
+            'HOST': env['DOTCLOUD_DB_SQL_HOST'],
+            'PORT': int(env['DOTCLOUD_DB_SQL_PORT']),
+        }
     }
-}
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -76,6 +81,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.abspath(os.path.dirname(__file__)) + '/static-project',
 )
 
 # List of finder classes that know how to find static files in
@@ -110,6 +116,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.abspath(os.path.dirname(__file__)) + '/templates',
 )
 
 INSTALLED_APPS = (
@@ -145,3 +152,9 @@ LOGGING = {
         },
     }
 }
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
+

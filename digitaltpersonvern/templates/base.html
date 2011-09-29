@@ -5,6 +5,7 @@
         <meta charset="utf-8" />
         <title>{% block title %}Digitalt personvern{% endblock title %}</title>
         <link rel="stylesheet" media="all" href="{{ STATIC_URL }}css/normalize.css">
+        <link rel="stylesheet" media="all" href="{{ STATIC_URL }}css/style.css">
         {% block css %}
         {% endblock %}
         <!--[if lt IE 9]>
@@ -18,7 +19,7 @@
     <body>
         {% block content %}
 
-        <img src="{{ STATIC_URL}}/img/dplogo.png">
+        <img src="{{ STATIC_URL}}img/dplogo.png">
         <h1>Digitalt personvern</h1>
 
         <p>Kommer snart…</p>
