@@ -1,0 +1,5 @@
+#!/bin/sh
+python digitaltpersonvern/manage.py syncdb --noinput
+python mkadmin.py
+mkdir -p /home/dotcloud/data/media /home/dotcloud/data/static
+python digitaltpersonvern/manage.py collectstatic --noinput

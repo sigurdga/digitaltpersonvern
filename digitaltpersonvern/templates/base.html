@@ -1,0 +1,28 @@
+<!doctype html>
+{% load i18n %}
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>{% block title %}Digitalt personvern{% endblock title %}</title>
+        <link rel="stylesheet" media="all" href="{{ STATIC_URL }}css/normalize.css">
+        {% block css %}
+        {% endblock %}
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        {% block js_start %}
+        {% endblock %}
+
+    </head>
+
+    <body>
+        {% block content %}
+
+        <img src="{{ STATIC_URL}}/img/dplogo.png">
+        <h1>Digitalt personvern</h1>
+
+        <p>Kommer snart…</p>
+
+        {% endblock %}
+    </body>
+</html>
