@@ -1,2 +1,7 @@
-html { font-family: Verdana, sans-serif; font size:"1";}
-body { margin: 0 auto; width: 300px; text-align: center;}
+html { font-family: Verdana, sans-serif; font size:"1"; font-family: Helvetica, Verdana, sans-serif; }
+body { }
+#content { margin: 0 auto; width: 1266px; text-align: center; padding-bottom: 200px; }
+h1 { color: #de8b19; font-size: 19px; text-transform: uppercase; }
+#logo { padding-top: 100px; padding-bottom: 50px; }
+#addressbar { background-color: #54534a; height: 29px; width: 100%; }
+#bottomlinks { background-color: #de8b19; height: 75px; width: 100%; }

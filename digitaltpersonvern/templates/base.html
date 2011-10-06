@@ -19,11 +19,18 @@
     <body>
         {% block content %}
 
-        <img src="{{ STATIC_URL}}img/dplogo.png">
+	<div id="content">
+        <img id="logo" src="{{ STATIC_URL}}img/logo.main.digitalt.personvern.110x113px.png">
         <h1>Digitalt personvern</h1>
 
-        <p>Kommer snart…</p>
+        <p>Kommer snart</p>
+	</div>
 
         {% endblock %}
+
+	<div id="footer">
+		<div id="addressbar">&nbsp;</div>
+		<div id="bottomlinks">&nbsp;</div>
+	</div>
     </body>
 </html>
