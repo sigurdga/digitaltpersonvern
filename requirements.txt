@@ -1,1 +1,11 @@
 Django
+BeautifulSoup
+Markdown
+South
+Unidecode
+django-mptt
+wsgiref
+samklang_utils
+samklang_blog
+samklang_menu
+samklang_pages
