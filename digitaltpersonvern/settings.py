@@ -108,7 +108,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    's7n_pages.middleware.PageFallbackMiddleware', # should be at the bottom
+    'samklang_pages.middleware.PageFallbackMiddleware', # should be at the bottom
 )
 
 ROOT_URLCONF = 'digitaltpersonvern.urls'
@@ -131,9 +131,9 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'south',
     'mptt',
-    's7n_blog',
-    's7n_menu',
-    's7n_pages',
+    'samklang_blog',
+    'samklang_menu',
+    'samklang_pages',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (

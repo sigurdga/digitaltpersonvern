@@ -14,7 +14,7 @@ urlpatterns = patterns('',
 
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^n/', include('s7n_blog.urls')),
+    url(r'^n/', include('samklang_blog.urls')),
     url(r'^$', IndexView.as_view()),
 )
 
