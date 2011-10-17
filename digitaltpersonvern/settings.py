@@ -10,6 +10,7 @@ except:
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
+DEVELOPMENT_MODE = DEBUG
 
 ADMINS = (
     ('Sigurd Gartmann', 'sigurdga-digitaltpersonvern@radvice.no'),
