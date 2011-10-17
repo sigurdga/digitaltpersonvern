@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load blog_tags %}
+
+{% block main %}
+
+<h1>Nyheter og pressemeldinger</h1>
+
+{% latest_entries 3 %}
+
+{% for entry in latest_entries %}
+
+<div class="post">
+<div class="meta">{{ entry.user }}, {{ entry.pub_date }}</div>
+<h2>{{ entry.title }}</h2>
+
+{{ entry.body_html|safe }}
+</div>
+
+{% endfor %}
+
+</div>
+{% endblock main %}
+

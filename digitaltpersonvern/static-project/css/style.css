@@ -1,7 +1,52 @@
-html { font-family: Verdana, sans-serif; font size:"1"; font-family: Helvetica, Verdana, sans-serif; }
-body { }
-#content { margin: 0 auto; width: 1266px; text-align: center; padding-bottom: 200px; }
-h1 { color: #de8b19; font-size: 19px; text-transform: uppercase; }
-#logo { padding-top: 100px; padding-bottom: 50px; }
-#addressbar { background-color: #54534a; height: 29px; width: 100%; }
-#bottomlinks { background-color: #de8b19; height: 75px; width: 100%; }
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
+
+html { }
+body { font size:"1"; font-family: 'Droid Sans', sans-serif; margin: 0 auto; width: 960px; color: #54534a; position: relative; }
+
+p { color: #333333; }
+strong { color: #54534a; }
+
+a { text-decoration: none; } 
+a:link, a:visited, a:hover, a:active { color: #de8b19; }
+a:hover { color: #54534a; text-decoration: underline; }
+
+nav a { text-transform: uppercase; }
+nav a:link, nav a:visited, nav a:hover, nav a:active { color: #54534a; }
+nav a:hover { color: #de8b19; }
+
+#header { height: 153px; }
+#logo { margin: 20px 0; }
+#footer { clear: both; border-top: 8px solid #54534a; text-align: left; margin-top: 60px; }
+
+#footer p { color: #54534a; }
+
+hr { width: 100%; height: 8px; border: 0; background-color: #54534a; margin: 40px 0; }
+
+//div.picturewrapper { height: 137px; }
+img.orange { border: 1px solid #de8b19; border-bottom: 8px solid #de8b19; float: left; margin-right: 10px; }
+img.gray { border: 1px solid #54534a; border-bottom: 8px solid #54534a; float: left; margin-right: 10px; }
+div.rightofpicture { height: 137px; vertical-align: bottom; display: table-cell; }
+div.rightofpicture p { margin-bottom: 4px; }
+
+h1 { color: #de8b19; font-size: 16px; text-transform: uppercase; margin-top: 0; width: 100%; border-bottom: 8px solid #de8b19; padding-bottom: 8px; }
+h2 { font-size: 16px; text-transform: uppercase; }
+h3 { font-size: 16px; font-weight: 700; }
+div.rightofpicture h2 { margin-bottom: 0; text-transform: inherit; }
+div.rightofpicture p { margin-top: 0; }
+
+nav { position: absolute; top: 100px; right: 0; }
+nav ul li { float: left; margin: 0 0 0 20px; font-weight: bold; }
+
+//#main { width: 620px; margin 0 10px; position: absolute: top: 157px; left: 0; }
+//#sidebar { width: 300px; margin 0 10px; position: absolute; top: 157px; right: 0; }
+#main { width: 620px; margin 0 10px; }
+#sidebar { width: 300px; margin 0 10px; float: right; }
+
+#sidebar h1 { color: #54534a; border-bottom: 8px solid #54534a; }
+
+
+//#addressbar { background-color: #54534a; height: 8px; width: 100%; }
+//#bottomlinks { background-color: #de8b19; height: 75px; width: 100%; }
+
+div.post { position: relative; }
+div.post div.meta { position: absolute; top: 8px; right: 0; color: #de8b19; font-size: 12px; }

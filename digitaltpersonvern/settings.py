@@ -108,6 +108,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    's7n_pages.middleware.PageFallbackMiddleware', # should be at the bottom
 )
 
 ROOT_URLCONF = 'digitaltpersonvern.urls'
@@ -128,7 +129,22 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.admindocs',
+    'south',
+    'mptt',
+    's7n_blog',
+    's7n_menu',
+    's7n_pages',
 )
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.core.context_processors.request",
+    "django.contrib.messages.context_processors.messages",
+    )
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

@@ -1,9 +1,10 @@
 <!doctype html>
 {% load i18n %}
+{% load menu_tags %}
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>{% block title %}Digitalt personvern{% endblock title %}</title>
+        <title>{% block title %}Digitalt Personvern{% endblock title %}</title>
         <link rel="stylesheet" media="all" href="{{ STATIC_URL }}css/normalize.css">
         <link rel="stylesheet" media="all" href="{{ STATIC_URL }}css/style.css">
         {% block css %}
@@ -17,20 +18,43 @@
     </head>
 
     <body>
-        {% block content %}
 
-	<div id="content">
-        <img id="logo" src="{{ STATIC_URL}}img/logo.main.digitalt.personvern.110x113px.png">
+        <header>
+        <a href=""><img id="logo" src="{{ STATIC_URL}}img/logo.main.digitalt.personvern.110x113px.png"></a>
+	</header>
+
+	<nav id="main-menu">
+        {% menu request %}
+	</nav>
+	<aside id="sidebar">
+	{% block sidebar %}
+
+        <h1>Kronerulling</h1>
+	<p>Digitalt Personvern samler inn penger for å prøve Datalagringsdirektivet i retten.</p>
+	<p>Vi har beregnet at vi trenger minimum to millioner kroner fra organisasjoner, fond og enkeltpersoner.</p>
+	<p><strong>Støtt oss og gi ditt bidrag!</strong></p>
+	<p><strong>Benytt konto: <br />
+	1503 23 44558</strong>
+	</p>
+	<p><strong>BIC:</strong><br />
+	DNBANOKKXXX<br />
+	</p>
+	<p><strong>IBAN-nummer:</strong><br />
+	NO7615032344558</p>
+
+	{% endblock sidebar %}
+	</aside>
+
+	<article id="main">
+        {% block main %}
+
         <h1>Digitalt personvern</h1>
 
-        <p>Kommer snart</p>
-	</div>
+        {% endblock main %}
+	</article>
 
-        {% endblock %}
-
-	<div id="footer">
-		<div id="addressbar">&nbsp;</div>
-		<div id="bottomlinks">&nbsp;</div>
-	</div>
+	<footer id="footer">
+	<p>Digitalt Personvern &nbsp; &nbsp; Thomas Heftyes gate 50 &nbsp; &nbsp; 0267 Oslo &nbsp; &nbsp; +47 911 07 911 &nbsp; &nbsp; kontakt@digitaltpersonvern.no &nbsp; &nbsp; Org.nr: 997 210 395</p>
+	</footer>
     </body>
 </html>
