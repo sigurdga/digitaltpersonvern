@@ -16,7 +16,7 @@ nav a:hover { color: #de8b19; }
 
 #header { height: 153px; }
 #logo { margin: 20px 0; }
-#footer { clear: both; border-top: 8px solid #54534a; text-align: left; margin-top: 60px; }
+#footer { clear: both; border-top: 8px solid #54534a; text-align: left; margin-top: 60px; font-size: 11px; }
 
 #footer p { color: #54534a; }
 
