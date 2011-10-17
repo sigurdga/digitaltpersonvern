@@ -8,12 +8,12 @@ try:
 except:
     env = None
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-DEVELOPMENT_MODE = DEBUG
+DEVELOPMENT_MODE = False
 
 ADMINS = (
-    ('Sigurd Gartmann', 'sigurdga-digitaltpersonvern@radvice.no'),
+    ('Sigurd Gartmann', 'sigurdga-digitaltpersonvern@sigurdga.no'),
 )
 
 MANAGERS = ADMINS
