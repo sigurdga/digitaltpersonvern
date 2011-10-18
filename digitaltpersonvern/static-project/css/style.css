@@ -22,7 +22,7 @@ nav a:hover { color: #de8b19; }
 
 hr { width: 100%; height: 8px; border: 0; background-color: #54534a; margin: 40px 0; }
 
-//div.picturewrapper { height: 137px; }
+/* div.picturewrapper { height: 137px; } */
 img.orange { border: 1px solid #de8b19; border-bottom: 8px solid #de8b19; float: left; margin-right: 10px; }
 img.gray { border: 1px solid #54534a; border-bottom: 8px solid #54534a; float: left; margin-right: 10px; }
 div.rightofpicture { height: 137px; vertical-align: bottom; display: table-cell; }
@@ -37,16 +37,20 @@ div.rightofpicture p { margin-top: 0; }
 nav { position: absolute; top: 100px; right: 0; }
 nav ul li { float: left; margin: 0 0 0 20px; font-weight: bold; }
 
-//#main { width: 620px; margin 0 10px; position: absolute: top: 157px; left: 0; }
-//#sidebar { width: 300px; margin 0 10px; position: absolute; top: 157px; right: 0; }
+/* #main { width: 620px; margin 0 10px; position: absolute: top: 157px; left: 0; } */
+/* #sidebar { width: 300px; margin 0 10px; position: absolute; top: 157px; right: 0; } */
 #main { width: 620px; margin 0 10px; }
 #sidebar { width: 300px; margin 0 10px; float: right; }
 
 #sidebar h1 { color: #54534a; border-bottom: 8px solid #54534a; }
 
 
-//#addressbar { background-color: #54534a; height: 8px; width: 100%; }
-//#bottomlinks { background-color: #de8b19; height: 75px; width: 100%; }
+/* #addressbar { background-color: #54534a; height: 8px; width: 100%; } */
+/* #bottomlinks { background-color: #de8b19; height: 75px; width: 100%; } */
 
 div.post { position: relative; }
 div.post div.meta { position: absolute; top: 8px; right: 0; color: #de8b19; font-size: 12px; }
+
+
+#contributionbar { background: url("/static/img/contribution-bar-background.png") no-repeat; height: 57px; padding: 20px 57px 0 2px; }
+#contributionbarvalue { height: 8px; background-color: rgba(222, 139, 25, 0.85); }
