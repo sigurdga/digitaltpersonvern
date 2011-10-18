@@ -8,7 +8,7 @@ try:
 except:
     env = None
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 DEVELOPMENT_MODE = False
 
