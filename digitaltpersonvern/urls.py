@@ -6,6 +6,7 @@ from django.conf import settings
 admin.autodiscover()
 
 from views import IndexView
+from samklang_pages.views import page
 
 urlpatterns = patterns('',
     # Examples:
@@ -16,6 +17,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^n/', include('samklang_blog.urls')),
     #url(r'^$', IndexView.as_view()),
+    url(r'^$', page, kwargs={'url': '/om/'}),
 )
 
 if settings.DEVELOPMENT_MODE:
