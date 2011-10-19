@@ -11,8 +11,7 @@ a:link, a:visited, a:hover, a:active { color: #de8b19; }
 a:hover { color: #54534a; text-decoration: underline; }
 
 nav a { text-transform: uppercase; }
-nav a:link, nav a:visited, nav a:hover, nav a:active { color: #54534a; }
-nav a:hover { color: #de8b19; }
+nav a:hover { text-decoration: none;}
 
 #header { height: 153px; }
 #logo { margin: 20px 0; }
@@ -28,7 +27,7 @@ img.gray { border: 1px solid #54534a; border-bottom: 8px solid #54534a; float: l
 div.rightofpicture { height: 137px; vertical-align: bottom; display: table-cell; }
 div.rightofpicture p { margin-bottom: 4px; }
 
-h1 { color: #de8b19; font-size: 16px; text-transform: uppercase; margin-top: 0; width: 100%; border-bottom: 8px solid #de8b19; padding-bottom: 8px; }
+h1 { font-size: 16px; text-transform: uppercase; margin-top: 0; width: 100%; border-bottom: 8px solid #de8b19; padding-bottom: 8px; }
 h2 { font-size: 16px; text-transform: uppercase; }
 h3 { font-size: 16px; font-weight: 700; }
 div.rightofpicture h2 { margin-bottom: 0; text-transform: inherit; }
@@ -42,7 +41,7 @@ nav ul li { float: left; margin: 0 0 0 20px; font-weight: bold; }
 #main { width: 620px; margin 0 10px; }
 #sidebar { width: 300px; margin 0 10px; float: right; }
 
-#sidebar h1 { color: #54534a; border-bottom: 8px solid #54534a; }
+#sidebar h1 { border-bottom: 8px solid #54534a; }
 
 
 /* #addressbar { background-color: #54534a; height: 8px; width: 100%; } */
