@@ -54,3 +54,8 @@ div.post div.meta { position: absolute; top: 8px; right: 0; color: #de8b19; font
 
 #contributionbar { background: url("/static/img/contribution-bar-background.png") no-repeat; height: 57px; padding: 20px 57px 0 2px; }
 #contributionbarvalue { height: 8px; background-color: rgba(222, 139, 25, 0.85); }
+
+#contribute { width: 100%; background-color: #de8b19; }
+#contribute p { text-transform: uppercase; text-align: center; color: #ffffff; padding: 5px 0; }
+#contribute strong { font-weight: bold; color: #ffffff; }
+
