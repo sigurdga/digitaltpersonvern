@@ -50,9 +50,8 @@ nav ul li { float: left; margin: 0 0 0 20px; font-weight: bold; }
 div.post { position: relative; }
 div.post div.meta { position: absolute; top: 8px; right: 0; color: #de8b19; font-size: 12px; }
 
-
-#contributionbar { background: url("/static/img/contribution-bar-background.png") no-repeat; height: 57px; padding: 20px 57px 0 2px; }
-#contributionbarvalue { height: 8px; background-color: rgba(222, 139, 25, 0.85); }
+#contributionbar { background: url("/static/img/contribution-bar-background.png") no-repeat; height: 57px; position: relative; margin-bottom: 1em; }
+#contributionbarvalue { height: 8px; background-color: rgba(222, 139, 25, 0.85); position: absolute; left: 2px; top: 20px; }
 
 #contribute { width: 100%; background-color: #de8b19; }
 #contribute p { text-transform: uppercase; text-align: center; color: #ffffff; padding: 5px 0; }
