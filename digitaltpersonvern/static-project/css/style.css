@@ -43,6 +43,7 @@ nav ul li { float: left; margin: 0 0 0 20px; font-weight: bold; }
 
 #sidebar h1 { border-bottom: 8px solid #54534a; }
 
+#userinfo { position: absolute; top: 20px; right: 0; }
 
 /* #addressbar { background-color: #54534a; height: 8px; width: 100%; } */
 /* #bottomlinks { background-color: #de8b19; height: 75px; width: 100%; } */

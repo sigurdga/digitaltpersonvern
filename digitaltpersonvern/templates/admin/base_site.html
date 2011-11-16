@@ -1,0 +1,19 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | Digitalt Personvern-admin{% endblock %}
+
+{% block extrastyle %}
+<style>
+#header{ background-color: #333333; border-bottom: solid 3px #de8b19; }
+
+#branding h1{ color: #fff; }
+#content-related .module h2, .module h2, .module caption, .inline-group h2 { background: inherit ; border-bottom: 1px solid #de8b19; color: #54534a; }
+a.section:link, a.section:visited { color: #54534a; }
+</style>
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">Digitalt Personvern-admin</h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

@@ -132,7 +132,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'south',
     'mptt',
-    'samklang_blog',
+    #'samklang_blog',
     'samklang_menu',
     'samklang_pages',
 )
