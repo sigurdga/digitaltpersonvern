@@ -15,9 +15,9 @@ nav a:hover { text-decoration: none;}
 
 #header { height: 153px; }
 #logo { margin: 20px 0; }
-#footer { clear: both; border-top: 8px solid #54534a; text-align: left; margin-top: 60px; font-size: 11px; }
-
-#footer p { color: #54534a; }
+#footer { clear: both; border-top: 8px solid #54534a; text-align: left; margin-top: 60px; font-size: 11px; color: #54534a; font-family: verdana, helvetiva, arial, sans-serif; padding-top: 12px; padding-bottom: 40px; }
+#footer div { width: 160px; margin-right: 10px; float: left; }
+#footer div strong { display: block; margin-bottom: 4px; }
 
 hr { width: 100%; height: 8px; border: 0; background-color: #54534a; margin: 40px 0; }
 
