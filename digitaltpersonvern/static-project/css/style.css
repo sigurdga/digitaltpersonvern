@@ -14,10 +14,12 @@ nav a { text-transform: uppercase; }
 nav a:hover { text-decoration: none;}
 
 #header { height: 153px; }
+#userinfo a:hover { text-decoration: none; }
 #logo { margin: 20px 0; }
-#footer { clear: both; border-top: 8px solid #54534a; text-align: left; margin-top: 60px; font-size: 11px; color: #54534a; font-family: verdana, helvetiva, arial, sans-serif; padding-top: 12px; padding-bottom: 40px; }
-#footer div { width: 160px; margin-right: 10px; float: left; }
+#footer { width: 100%; clear: both; border-top: 8px solid #54534a; text-align: left; margin-top: 60px; font-size: 11px; color: #54534a; font-family: verdana, helvetiva, arial, sans-serif; padding-top: 12px; padding-bottom: 40px; }
+#footer div { width: 160px; margin-right: 5px; float: left; }
 #footer div strong { display: block; margin-bottom: 4px; }
+#footer div#loginicon { float: right; width: 20px; margin-right: 0; margin-top: 2px; }
 
 hr { width: 100%; height: 8px; border: 0; background-color: #54534a; margin: 40px 0; }
 
@@ -33,15 +35,20 @@ h3 { font-size: 16px; font-weight: 700; }
 div.rightofpicture h2 { margin-bottom: 0; text-transform: inherit; }
 div.rightofpicture p { margin-top: 0; }
 
-nav { position: absolute; top: 100px; right: 0; }
-nav ul li { float: left; margin: 0 0 0 20px; font-weight: bold; }
-
 /* #main { width: 620px; margin 0 10px; position: absolute: top: 157px; left: 0; } */
 /* #sidebar { width: 300px; margin 0 10px; position: absolute; top: 157px; right: 0; } */
-#main { width: 620px; margin 0 10px; }
+#main { width: 620px; margin 0 10px; position: relative; }
 #sidebar { width: 300px; margin 0 10px; float: right; }
 
 #sidebar h1 { border-bottom: 8px solid #54534a; }
+
+#main-menu { position: absolute; top: 100px; right: -10px; }
+#main-menu ul li { float: left; margin: 0 0 0 0; font-weight: bold; }
+#main-menu ul li a { padding: 5px 10px; }
+#main-menu ul li a.active { background-color: #54534a; border-radius: 15px; color: #fff; }
+
+#context-menu { position: absolute; top: 3px; right: 0; font-size: 12px; }
+#context-menu ul li { float: left; margin: 0 0 0 20px; font-weight: bold; }
 
 #userinfo { position: absolute; top: 20px; right: 0; }
 
@@ -59,3 +66,32 @@ div.post div.meta { position: absolute; top: 8px; right: 0; color: #de8b19; font
 #contribute p { text-transform: uppercase; text-align: center; color: #ffffff; padding: 5px 0; }
 #contribute strong { font-weight: bold; color: #ffffff; }
 
+.tagline { border-top: 1px solid rgba(0, 0, 0, 0.1); margin: 1.5em 0 0; padding: 0.5em 0; border-bottom: 1px solid rgba(0, 0, 0, 0.1 ); }
+.tagline .tag { background: none repeat scroll 0 0 rgba(0, 0, 0, 0.04); border-radius: 4px; margin-right: 6px; color: #808080; font-size: 0.85em; padding: 0.2em 0.9em; line-height: 24px; }
+
+
+.ui-nestedSortable-error{background:#fbe3e4;color:#8a1f11}
+div#new_menu_item div#div_id_parent{display:none}
+ol.nested_sortable{margin:1em 0;padding:0;list-style-type:none;}
+ol.nested_sortable ol{padding:0;margin:0 0 0 25px;list-style-type:none}
+ol.nested_sortable li{margin:5px 0 0 0;padding:0;}
+ol.nested_sortable li.placeholder{border:1px solid #efefef;-moz-box-shadow:0 -1px 2px rgba(0,0,0,0.4);-webkit-box-shadow:0 -1px 2px rgba(0,0,0,0.4);box-shadow:0 -1px 2px rgba(0,0,0,0.4);background:top;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#fffcdf, endColorstr=#efeccf);background:-webkit-gradient(linear,left top,left bottom,from(#fffcdf),to(#efeccf));background:-moz-linear-gradient(top,#fffcdf,#efeccf);border-radius:3px}
+ol.nested_sortable li div{border:1px solid #aaa;padding:3px;margin:0;cursor:move;border-radius:3px;background:top;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#fefefe, endColorstr=#efefef);background:-webkit-gradient(linear,left top,left bottom,from(#fefefe),to(#efefef));background:-moz-linear-gradient(top,#fefefe,#efefef);}
+ol.nested_sortable li div:hover{box-shadow:0 0 3px rgba(0,0,0,0.4)}
+span.new_item,span.delete_item{cursor:pointer;display:block;margin:0;padding:0;width:13px;height:13px;float:right;margin-left:2px}
+span.new_item{background:transparent url("/static/img/plus.png") 50% 50% no-repeat}
+span.delete_item{background:transparent url("/static/img/minus.png") 50% 50% no-repeat}
+.uniForm .ctrlHolder { border-bottom: 1px solid #DFDFDF; padding: 7px 7px 7px 0; }
+.uniForm .buttonHolder { text-align: inherit; }
+.uniForm .buttonHolder a { padding: 2px 4px; background-color: #efefef; border: 1px solid #ddd; text-decoration: none; color: #000; font-weight: bold; }
+.dropbox { /*border: 1px solid #ddd; */ -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; padding: 10px 0; text-align: center; margin: 5px 0; background-color: #fff; width: 420px; min-height: 75px; }
+.uploads { list-style: none; margin: 10px 0; padding: 0; }
+.uploads li { /* border-bottom: 1px solid #ddd; */ line-height: 20px; overflow: hidden; text-align: left; } 
+.uploads li a { float: right; } 
+.progress { height: 15px; background-color: #ddd; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; margin: 5px 0; }
+.uniForm .multiField { width: 100%; margin-bottom: 25px; background-color: #efefef; border: 1px solid #ddd; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
+.uniForm .textInput, .uniForm .inlineLabels .textInput, .uniForm .inlineLabels .fileUpload, .uniForm .selectInput, .uniForm select, .uniForm .inlineLabels .selectInput, .uniForm .inlineLabels select, .uniForm textarea, .uniForm .inlineLabels textarea { width: 100%; }
+.uniForm .inlineLabels .formHint { margin-left: 0; }
+.uniForm .inlineLabels label, .uniForm .inlineLabels .label { width: 100%; }
+.uniForm .formHint, .uniForm .blockLabels .formHint { width: 100%; }
+form.uniForm { margin-bottom: 2em; }

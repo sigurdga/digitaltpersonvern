@@ -109,6 +109,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'samklang_utils.middleware.SiteMiddleware',
     'samklang_pages.middleware.PageFallbackMiddleware', # should be at the bottom
 )
 
@@ -132,9 +133,14 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'south',
     'mptt',
+    'taggit',
+    'taggit_templatetags',
+    'uni_form',
     #'samklang_blog',
+    'samklang_utils',
     'samklang_menu',
     'samklang_pages',
+    'samklang_media',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (

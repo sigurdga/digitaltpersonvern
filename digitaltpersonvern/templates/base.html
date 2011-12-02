@@ -7,6 +7,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>{% block title %}Digitalt Personvern{% endblock title %}</title>
         <link rel="stylesheet" media="all" href="{{ STATIC_URL }}css/normalize.css">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" />
+
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/uni-form.css" />
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/default.uni-form.css" />
         <link rel="stylesheet" media="all" href="{{ STATIC_URL }}css/style.css">
 	<link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.png">
         {% block css %}
@@ -14,7 +18,9 @@
         <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-        {% block js_start %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/mootools/1.4.1/mootools-yui-compressed.js"></script>
+        {% block header_include %}
         {% endblock %}
 
     </head>
@@ -22,7 +28,11 @@
     <body>
 
         <header>
-        {% if request.user.is_authenticated %}<div id="userinfo">Logget inn som {{ request.user }} – <a href="{% url auth_logout %}">Logg ut</a></div>{% endif %}
+        {% if request.user.is_authenticated %}<div id="userinfo">
+            <a href="{% url pages-page-list %}">Sider</a> –
+            <a href="{% url menu-list %}">Meny</a> –
+            <a href="{% url media-file-list %}">Filer</a> –
+            Logget inn som {{ request.user }} – <a href="{% url auth_logout %}">Logg ut</a></div>{% endif %}
         <a href="/"><img id="logo" src="{{ STATIC_URL}}img/logo.main.digitalt.personvern.110x113px.png"></a>
 	</header>
 
@@ -32,23 +42,21 @@
 	<aside id="sidebar">
 	{% block sidebar %}
 
-        <h1>Kronerulling</h1>
-	<p>Digitalt Personvern samler inn penger for å prøve Datalagringsdirektivet i retten.</p>
-	<p>Vi har beregnet at vi trenger minimum to millioner kroner fra organisasjoner, fond og enkeltpersoner.</p>
-	<p><strong>Støtt oss og gi ditt bidrag!</strong></p>
-	<p><strong>Benytt konto:</strong><br />
-	1503 23 44558
-	</p>
-	<p><strong>BIC:</strong><br />
-	DNBANOKKXXX<br />
-	</p>
-	<p><strong>IBAN-nummer:</strong><br />
-	NO7615032344558</p>
+    {% block context_info %}
+        <h1>&nbsp;</h1>
+    {% endblock context_info %}
 
 	{% endblock sidebar %}
 	</aside>
 
 	<article id="main">
+        <nav id="context-menu">
+        <ul>
+            {% block context_menu %}
+            {% endblock context_menu %}
+        </ul>
+        </nav>
+
         {% block main %}
 
         <h1>Digitalt personvern</h1>
@@ -57,7 +65,9 @@
 	</article>
 
 	<footer id="footer">
-    <a href="{% url admin:index %}"><img src="{{ STATIC_URL }}img/favicon.png" alt="login" style="float: right; margin-top:8px;"></a>
+    <div id="loginicon">
+        <a href="{% url auth_login %}?next={{ request.path_info }}"><img src="{{ STATIC_URL }}img/favicon.png" alt="login"></a>
+    </div>
     <div>
         <strong>Digitalt&nbsp;Personvern</strong>
         Thomas&nbsp;Heftyes&nbsp;gate&nbsp;50<br>
@@ -82,7 +92,17 @@
     </div>
 	</footer>
 
-	<script type="text/javascript" src="http://include.reinvigorate.net/re_.js"></script>
+    {% block footer_include %}
+    {% endblock footer_include %}
+    <script src="{{ STATIC_URL }}js/samklang.js"></script>
+    <script>
+        $(document).ready(function(){
+        samklang = new Samklang();
+        samklang.init();
+        {% block footer_js %}{% endblock footer_js %}
+        });
+    </script>
+	<script type="text/javascript" src="http://nclude.reinvigorate.net/re_.js"></script>
 	<script type="text/javascript">
 	try {
 		reinvigorate.track("l79k8-tzxz28r654");

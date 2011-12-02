@@ -4,8 +4,10 @@ Markdown
 South
 Unidecode
 django-mptt
+django-uni-form
+django-taggit
 wsgiref
-samklang_utils
-samklang_blog
-samklang_menu
-samklang_pages
+samklang-media
+samklang-menu
+samklang-pages
+samklang-utils
