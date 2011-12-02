@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load uni_form_tags %}
+
+{% block title %}{% trans "Login" %}{% endblock %}
+
+{% block main %}
+
+<h1>{% trans "Login" %}</h1>
+
+{% if form.errors %}
+<p class="error">{% trans "Ooops! That was not correct." %}</p>
+{% endif %}
+
+<form action="" method="post" class="uniForm">
+    <fieldset>
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ next|escape }}" />
+        {{ form|as_uni_form }}
+        <input type="submit" value="{% trans "Login" %}" />
+    </fieldset>
+</form>
+
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
+
+{% block footer_js %}
+document.getElementById('id_username').focus()
+{% endblock %}
