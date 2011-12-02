@@ -6,8 +6,10 @@ Unidecode
 django-mptt
 django-uni-form
 django-taggit
+django-taggit-templatetags
+python-magic
 wsgiref
-samklang-media
-samklang-menu
-samklang-pages
-samklang-utils
+samklang-media==0.2.0
+samklang-menu==0.2.0
+samklang-pages==0.2.0
+samklang-utils==0.2.0
