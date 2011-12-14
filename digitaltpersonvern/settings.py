@@ -110,6 +110,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'samklang_utils.middleware.SiteMiddleware',
+    'samklang_menu.middleware.ActivePageMiddleware',
     'samklang_pages.middleware.PageFallbackMiddleware', # should be at the bottom
 )
 
@@ -131,6 +132,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.admindocs',
+    'floppyforms',
     'south',
     'mptt',
     'taggit',
@@ -141,6 +143,7 @@ INSTALLED_APPS = (
     'samklang_menu',
     'samklang_pages',
     'samklang_media',
+    'samklang_payment',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -175,6 +178,13 @@ LOGGING = {
         },
     }
 }
+
+PAYMENT_DONE_URL = '/payment/donated/'
+
+# Override these in local_settings.py if your settings file is stored publicly
+NETS_MERCHANT_ID = 000000 # Six digits
+NETS_TOKEN = "ABCDEFGH" # String of eight characters, your initial password
+NETS_TEST_MODE = False # Use test hosts or production hosts
 
 try:
     from local_settings import *

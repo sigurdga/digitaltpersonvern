@@ -40,6 +40,8 @@
         {% menu request %}
 	</nav>
 	<aside id="sidebar">
+    {% widgets request 'sidebar_top' %}
+
 	{% block sidebar %}
 
     {% block context_info %}
@@ -84,7 +86,8 @@
     </div>
     <div>
         <strong>Pressekontakt</strong>
-        +47&nbsp;909&nbsp;19&nbsp;944
+        +47&nbsp;909&nbsp;19&nbsp;944<br>
+        +47&nbsp;905&nbsp;71&nbsp;847
     </div>
     <div>
         <strong>Administrativ kontakt</strong>
