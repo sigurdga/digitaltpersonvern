@@ -15,6 +15,6 @@ wsgiref
 samklang-blog==0.2.1
 samklang-media==0.3.0
 samklang-menu==0.3.1
-samklang-pages==0.3.1
-#samklang-payment==0.1.0
+samklang-pages==0.3.2
+samklang-payment==0.1.0
 samklang-utils==0.3.3
