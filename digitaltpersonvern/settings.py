@@ -179,7 +179,7 @@ LOGGING = {
     }
 }
 
-PAYMENT_DONE_URL = '/payment/donated/'
+DONATION_SUCCESS_URL = '/bidra/takk/'
 
 # Override these in local_settings.py if your settings file is stored publicly
 NETS_MERCHANT_ID = 000000 # Six digits
