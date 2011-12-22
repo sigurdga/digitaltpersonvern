@@ -138,7 +138,7 @@ INSTALLED_APPS = (
     'taggit',
     'taggit_templatetags',
     'uni_form',
-    #'samklang_blog',
+    'samklang_blog',
     'samklang_utils',
     'samklang_menu',
     'samklang_pages',
