@@ -179,12 +179,7 @@ LOGGING = {
     }
 }
 
-DONATION_SUCCESS_URL = '/bidra/takk/'
-
-# Override these in local_settings.py if your settings file is stored publicly
-NETS_MERCHANT_ID = 000000 # Six digits
-NETS_TOKEN = "ABCDEFGH" # String of eight characters, your initial password
-NETS_TEST_MODE = False # Use test hosts or production hosts
+LOGIN_URL = '/inn/'
 
 try:
     from local_settings import *
