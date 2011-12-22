@@ -29,9 +29,9 @@ img.gray { border: 1px solid #54534a; border-bottom: 8px solid #54534a; float: l
 div.rightofpicture { height: 137px; vertical-align: bottom; display: table-cell; }
 div.rightofpicture p { margin-bottom: 4px; }
 
-h1 { font-size: 16px; text-transform: uppercase; margin-top: 0; width: 100%; border-bottom: 8px solid #de8b19; padding-bottom: 8px; }
-h2 { font-size: 16px; text-transform: uppercase; }
-h3 { font-size: 16px; font-weight: 700; }
+h1 { font-size: 1em; text-transform: uppercase; margin: 0; border-bottom: 8px solid #de8b19; padding-bottom: 8px; }
+h2 { font-size: 1em; text-transform: uppercase; }
+h3 { font-size: 1em; font-weight: 700; }
 div.rightofpicture h2 { margin-bottom: 0; text-transform: inherit; }
 div.rightofpicture p { margin-top: 0; }
 
@@ -50,6 +50,9 @@ div.rightofpicture p { margin-top: 0; }
 #context-menu { position: absolute; top: 3px; right: 0; font-size: 12px; }
 #context-menu ul li { float: left; margin: 0 0 0 20px; font-weight: bold; }
 
+.object-menu ul { float: right; font-size: 0.8em; padding: 0; }
+.object-menu ul li { float: left; }
+
 h1 { margin-top: 1ex }
 .widget { position: relative; margin: 0.5ex 0; padding: 0; }
 .widget-context-menu { position: absolute; top: 0; right: 0; }
@@ -64,13 +67,14 @@ h1 { margin-top: 1ex }
 div.post { position: relative; }
 div.post div.meta { position: absolute; top: 8px; right: 0; color: #de8b19; font-size: 12px; }
 
-#contributionbar { background: url("/static/img/contribution-bar-background.png") no-repeat; height: 57px; position: relative; padding-right: 80px; margin-bottom: 1em; }
+#contributionbar { background: url("/static/img/contribution-bar-background.png") no-repeat; height: 57px; position: relative; margin-bottom: 1em; } /* padding-right: 80px; */
 #contributionbarcontainer { width: 560px; position: relative; }
-#contributionbarvalue { height: 8px; background-color: rgba(222, 139, 25, 0.85); position: absolute; left: 3px; top: 20px; right: 30px; }
+#contributionbarvalue { height: 8px; background-color: rgba(222, 139, 25, 0.85); position: absolute; left: 3px; top: 20px; }
 
 #contribute { width: 100%; background-color: #de8b19; }
 #contribute p { text-transform: uppercase; text-align: center; color: #ffffff; padding: 5px 0; }
 #contribute strong { font-weight: bold; color: #ffffff; }
+#contribute a { display: block; text-transform: uppercase; text-align: center; color: #ffffff; padding: 5px 0; font-weight: bold; color: #ffffff; }
 
 .tagline { border-top: 1px solid rgba(0, 0, 0, 0.1); margin: 1.5em 0 0; padding: 0.5em 0; border-bottom: 1px solid rgba(0, 0, 0, 0.1 ); }
 .tagline .tag { background: none repeat scroll 0 0 rgba(0, 0, 0, 0.04); border-radius: 4px; margin-right: 6px; color: #808080; font-size: 0.85em; padding: 0.2em 0.9em; line-height: 24px; }
@@ -108,3 +112,28 @@ form.uniForm { margin-bottom: 2em; }
 
 #image-upload { width: 100%; margin: 0 auto; height: 300px; border: none; }
 
+table thead, table tfoot { background-color: #ddd; }
+table .odd td, table .odd th { background-color: #fff; }
+table .even td, table .even th { background-color: #efefef; }
+table .right { text-align: right; }
+#payment-table td, #payment-table th { padding: 2px; border: 1px solid #efefef; }
+
+
+ul.latest-entries { padding:0; list-style-type:none; }
+ul.latest-entries li { margin: 0.5em 0; }
+ul.latest-entries h2 { margin: 0; }
+div.meta { font-size: 0.8em; }
+
+.archive .blogpost { padding-bottom: 1em; }
+.blogpost h2 { margin-bottom: 0; }
+
+.blogpost div.meta { text-align: right }
+.blogpost p.more { margin-top: -1em; }
+
+.blogpost h1 { padding: 0; border: 0; }
+.blogpost h2 { text-transform: none; }
+
+.blogpost h1.title { margin-bottom: 0; border-bottom: 8px solid #de8b19; padding-bottom: 8px; }
+.blogpost h2.title { text-transform: uppercase; margin-top: 8px; border-top: 8px solid #de8b19; padding-top: 8px; }
+
+#blogheader { border: 0; padding: 0; }
