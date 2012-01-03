@@ -96,14 +96,14 @@ span.new_item,span.delete_item{cursor:pointer;display:block;margin:0;padding:0;w
 span.new_item{background:transparent url("/static/img/plus.png") 50% 50% no-repeat}
 span.delete_item{background:transparent url("/static/img/minus.png") 50% 50% no-repeat}
 .uniForm .multiField { width: 100%; margin-bottom: 25px; background-color: #efefef; border: 1px solid #ddd; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
-.uniForm .textInput, .uniForm .inlineLabels .textInput, .uniForm .inlineLabels .fileUpload, .uniForm .selectInput, .uniForm select, .uniForm .inlineLabels .selectInput, .uniForm .inlineLabels select, .uniForm textarea, .uniForm .inlineLabels textarea { width: 100%; }
+.uniForm .textInput, .uniForm .inlineLabels .textInput, .uniForm .inlineLabels .fileUpload, .uniForm .selectInput, .uniForm select, .uniForm .inlineLabels .selectInput, .uniForm .inlineLabels select, .uniForm textarea, .uniForm .inlineLabels textarea { width: 54%; }
 .uniForm .inlineLabels .formHint { margin-left: 0; margin-top: 7px; }
 .uniForm .inlineLabels label, .uniForm .inlineLabels .label { width: 100%; }
 .uniForm .blockLabels label, .uniForm .blockLabels .label { width: 100%; }
-.uniForm .textInput, .uniForm .blockLabels .textInput, .uniForm .blockLabels .fileUpload, .uniForm .selectInput, .uniForm select, .uniForm .blockLabels .selectInput, .uniForm .blockLabels select, .uniForm textarea, .uniForm .blockLabels textarea { width: 100%; }
+.uniForm .textInput, .uniForm .blockLabels .textInput, .uniForm .blockLabels .fileUpload, .uniForm .selectInput, .uniForm select, .uniForm .blockLabels .selectInput, .uniForm .blockLabels select, .uniForm textarea, .uniForm .blockLabels textarea { width: 99%; }
 .uniForm .formHint, .uniForm .blockLabels .formHint { width: 100%; }
 .uniForm .blockLabels .formHint { margin-left: 0; margin-top: 7px; }
-.uniForm .ctrlHolder { padding: 5px 0; }
+.uniForm .ctrlHolder { padding: 5px 0; border: none; }
 form.uniForm { margin-bottom: 2em; }
 
 #sidebar .uniForm textarea, #sidebar .uniForm .textInput { width: 294px; }
@@ -122,6 +122,7 @@ table .even td, table .even th { background-color: #efefef; }
 table .right { text-align: right; }
 #payment-table td, #payment-table th { padding: 2px; border: 1px solid #efefef; }
 
+span.donationsuggestion { margin-left: 10px; }
 
 ul.latest-entries { padding:0; list-style-type:none; }
 ul.latest-entries li { margin: 0.5em 0; }
