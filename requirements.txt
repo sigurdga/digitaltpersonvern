@@ -16,5 +16,5 @@ samklang-blog==0.2.2
 samklang-media==0.3.0
 samklang-menu==0.3.2
 samklang-pages==0.3.3
-samklang-payment==0.4.2
+samklang-payment==0.4.3
 samklang-utils==0.3.4
