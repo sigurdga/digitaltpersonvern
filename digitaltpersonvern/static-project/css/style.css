@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans);
 
-html { }
-body { font size:"1"; font-family: 'Droid Sans', sans-serif; margin: 0 auto; width: 960px; color: #54534a; position: relative; }
+html { margin: 0 auto; width: 960px; }
+body { font size:"1"; font-family: 'Droid Sans', sans-serif; margin: 0 10px; color: #54534a; position: relative; }
 
 p { color: #333333; }
 strong { color: #54534a; }
@@ -16,12 +16,17 @@ nav a:hover { text-decoration: none;}
 #header { height: 153px; }
 #userinfo a:hover { text-decoration: none; }
 #logo { margin: 20px 0; }
-#footer { width: 100%; clear: both; border-top: 8px solid #54534a; text-align: left; margin-top: 60px; font-size: 11px; color: #54534a; font-family: verdana, helvetiva, arial, sans-serif; padding-top: 12px; padding-bottom: 100px; }
-#footer div { width: 160px; margin-right: 5px; float: left; }
-#footer div strong { display: block; margin-bottom: 4px; }
-#footer div#loginicon { float: right; width: 20px; margin-right: 0; margin-top: 2px; }
+#footer { width: 100%; border-top: 8px solid #54534a; clear: both; margin-top: 60px; padding-top: 12px; padding-bottom: 100px; position: relative; }
+#footer div#loginicon { position: absolute; top: 12px; right: 0; }
+#footer-blocks { font-size: 11px; color: #54534a; font-family: "verdana", "helvetica", "arial", sans-serif; }
+#footer-blocks div { width: 220px; margin-left: 20px; float: left; }
+#footer-blocks div:first-child { margin-left: 0; }
+/*#footer-blocks div:last-child { margin-right: 0; }*/
+#footer-blocks div strong { display: block; margin-bottom: 4px; }
 
 hr { width: 100%; height: 8px; border: 0; background-color: #54534a; margin: 40px 0; }
+
+.opposite { float: right }
 
 /* div.picturewrapper { height: 137px; } */
 img.orange { border: 1px solid #de8b19; border-bottom: 8px solid #de8b19; float: left; margin-right: 10px; }
@@ -42,7 +47,7 @@ div.rightofpicture p { margin-top: 0; }
 
 #sidebar h1 { border-bottom: 8px solid #54534a; }
 
-#main-menu { position: absolute; top: 100px; right: -10px; }
+#main-menu { position: absolute; top: 100px; right: 0; }
 #main-menu ul li { float: left; margin: 0 0 0 0; font-weight: bold; }
 #main-menu ul li a { padding: 5px 10px; }
 #main-menu ul li a.active { background-color: #54534a; border-radius: 15px; color: #fff; }
@@ -59,7 +64,7 @@ h1 { margin-top: 1ex }
 .widget-context-menu a { color: #000; text-decoration: none; }
 .widget h1 { margin-top: 0.5ex; padding-top: 0.5ex; }
 
-#userinfo { position: absolute; top: 20px; right: 0; }
+#userinfo { position: absolute; top: 20px; right: 10px; }
 
 /* #addressbar { background-color: #54534a; height: 8px; width: 100%; } */
 /* #bottomlinks { background-color: #de8b19; height: 75px; width: 100%; } */
@@ -71,14 +76,13 @@ div.post div.meta { position: absolute; top: 8px; right: 0; color: #de8b19; font
 #contributionbarcontainer { width: 560px; position: relative; }
 #contributionbarvalue { height: 8px; background-color: rgba(222, 139, 25, 0.85); position: absolute; left: 3px; top: 20px; }
 
-#contribute { width: 100%; background-color: #de8b19; }
+#contribute { width: 100%; background-color: #de8b19; margin: 1em 0; }
 #contribute p { text-transform: uppercase; text-align: center; color: #ffffff; padding: 5px 0; }
 #contribute strong { font-weight: bold; color: #ffffff; }
 #contribute a { display: block; text-transform: uppercase; text-align: center; color: #ffffff; padding: 5px 0; font-weight: bold; color: #ffffff; }
 
 .tagline { border-top: 1px solid rgba(0, 0, 0, 0.1); margin: 1.5em 0 0; padding: 0.5em 0; border-bottom: 1px solid rgba(0, 0, 0, 0.1 ); }
 .tagline .tag { background: none repeat scroll 0 0 rgba(0, 0, 0, 0.04); border-radius: 4px; margin-right: 6px; color: #808080; font-size: 0.85em; padding: 0.2em 0.9em; line-height: 24px; }
-
 
 .ui-nestedSortable-error{background:#fbe3e4;color:#8a1f11}
 div#new_menu_item div#div_id_parent{display:none}
