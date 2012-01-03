@@ -29,10 +29,10 @@ hr { width: 100%; height: 8px; border: 0; background-color: #54534a; margin: 40p
 .opposite { float: right }
 
 /* div.picturewrapper { height: 137px; } */
-img.orange { border: 1px solid #de8b19; border-bottom: 8px solid #de8b19; float: left; margin-right: 10px; }
-img.gray { border: 1px solid #54534a; border-bottom: 8px solid #54534a; float: left; margin-right: 10px; }
-div.rightofpicture { height: 137px; vertical-align: bottom; display: table-cell; }
-div.rightofpicture p { margin-bottom: 4px; }
+img.orange { border: 1px solid #de8b19; border-bottom: 8px solid #de8b19; float: left; margin: 15px 10px 0 0; }
+img.gray { border: 1px solid #54534a; border-bottom: 8px solid #54534a; float: left; margin: 15px 10px 0 0; }
+div.rightofpicture { height: 152px; vertical-align: bottom; display: table-cell; padding-bottom: 4px; }
+div.rightofpicture p { margin-bottom: 0; }
 
 h1 { font-size: 1em; text-transform: uppercase; margin: 0; border-bottom: 8px solid #de8b19; padding-bottom: 8px; }
 h2 { font-size: 1em; text-transform: uppercase; }
