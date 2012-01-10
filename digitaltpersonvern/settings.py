@@ -180,6 +180,7 @@ LOGGING = {
 }
 
 LOGIN_URL = '/inn/'
+LOGIN_REDIRECT_URL = '/'
 
 try:
     from local_settings import *

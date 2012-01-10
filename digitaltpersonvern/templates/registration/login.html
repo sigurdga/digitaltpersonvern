@@ -21,6 +21,9 @@
     </fieldset>
 </form>
 
+{% url password_reset as password_reset_url %}
+<p>Har du glemt passordet? <a href="{{ password_reset_url }}">Nullstill mitt passord</a></p>
+
 {% endblock %}
 
 {% block sidebar %}

@@ -34,43 +34,48 @@
             <a href="{% url menu-list %}">Meny</a> –
             <a href="{% url media-file-list %}">Filer</a> –
             <a href="{% url payment-campaign-list %}">Donasjoner</a> –
-            Logget inn som {{ request.user }} – <a href="{% url auth_logout %}">Logg ut</a></div>{% endif %}
+            Logget inn som {{ request.user }} – 
+            <a href="{% url password_change %}">Bytt passord</a> –
+            <a href="{% url logout %}">Logg ut</a></div>{% endif %}
         <a href="/"><img id="logo" src="{{ STATIC_URL}}img/logo.main.digitalt.personvern.110x113px.png"></a>
 	</header>
 
 	<nav id="main-menu">
         {% menu request %}
 	</nav>
-	<aside id="sidebar">
+
+    {% block content %}
+    <aside id="sidebar">
     {% widgets request 'sidebar_top' %}
 
-	{% block sidebar %}
+    {% block sidebar %}
 
     {% block context_info %}
-        <h1>&nbsp;</h1>
+    <h1>&nbsp;</h1>
     {% endblock context_info %}
 
-	{% endblock sidebar %}
-	</aside>
+    {% endblock sidebar %}
+    </aside>
 
-	<article id="main">
-        <nav id="context-menu">
-        <ul>
-            {% block context_menu %}
-            {% endblock context_menu %}
-        </ul>
-        </nav>
+    <article id="main">
+    <nav id="context-menu">
+    <ul>
+        {% block context_menu %}
+        {% endblock context_menu %}
+    </ul>
+    </nav>
 
-        {% block main %}
+    {% block main %}
 
-        <h1>Digitalt personvern</h1>
+    <h1>Digitalt personvern</h1>
 
-        {% endblock main %}
-	</article>
+    {% endblock main %}
+    </article>
+    {% endblock %}
 
 	<footer id="footer">
     <div id="loginicon">
-        <a href="{% url auth_login %}?next={{ request.path_info }}"><img src="{{ STATIC_URL }}img/favicon.png" alt="login"></a>
+        <a href="{% url login %}?next={{ request.path_info }}"><img src="{{ STATIC_URL }}img/favicon.png" alt="login"></a>
     </div>
     <div id="footer-blocks">
         <div>
