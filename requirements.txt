@@ -12,7 +12,7 @@ pyRFC3339
 python-magic
 pytz
 wsgiref
-samklang-blog==0.2.3
+samklang-blog==0.2.4
 samklang-media==0.3.0
 samklang-menu==0.3.2
 samklang-pages==0.3.3
