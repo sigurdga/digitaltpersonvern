@@ -26,7 +26,7 @@ urlpatterns = patterns('',
     url(r'^blogg/', include('samklang_blog.urls')),
     url(r'^donate/', include('samklang_payment.urls')),
     #url(r'^$', IndexView.as_view()),
-    url(r'^$', page, kwargs={'url': '/om/'}),
+    url(r'^$', page, kwargs={'url': '/'}),
 )
 
 if settings.DEVELOPMENT_MODE:
