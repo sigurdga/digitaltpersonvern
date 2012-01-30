@@ -52,7 +52,7 @@ div.rightofpicture p { margin-top: 0; }
 #main-menu ul li a { padding: 5px 10px; }
 #main-menu ul li a.active { background-color: #54534a; border-radius: 15px; color: #fff; }
 
-#context-menu { position: absolute; top: 3px; right: 0; font-size: 12px; }
+#context-menu { position: absolute; top: 23px; right: 0; font-size: 12px; z-index: 1; }
 #context-menu ul li { float: left; margin: 0 0 0 20px; font-weight: bold; }
 
 .object-menu ul { float: right; font-size: 0.8em; padding: 0; }
@@ -69,8 +69,10 @@ h1 { margin-top: 1ex }
 /* #addressbar { background-color: #54534a; height: 8px; width: 100%; } */
 /* #bottomlinks { background-color: #de8b19; height: 75px; width: 100%; } */
 
+/*
 div.post { position: relative; }
-div.post div.meta { position: absolute; top: 8px; right: 0; color: #de8b19; font-size: 12px; }
+div.post div.meta { position: absolute; top: 3px; right: 0; color: #de8b19; font-size: 12px; }
+*/
 
 #contributionbar { background: url("/static/img/contribution-bar-background.png") no-repeat; height: 57px; position: relative; margin-bottom: 1em; } /* padding-right: 80px; */
 #contributionbarcontainer { width: 560px; position: relative; }
@@ -129,11 +131,12 @@ ul.latest-entries li { margin: 0.5em 0; }
 ul.latest-entries h2 { margin: 0; }
 div.meta { font-size: 0.8em; }
 
-.archive .blogpost { padding-bottom: 1em; }
+.blogpost { padding-bottom: 1em; position: relative; }
 .blogpost h2 { margin-bottom: 0; }
 
-.blogpost div.meta { text-align: right }
-.blogpost p.more { margin-top: -1em; }
+.blogpost div.meta { position: absolute; top: 3px; right: 0; }
+.archive .blogpost .meta { top: 19px; }
+.blogpost p.more { margin-top: -1em; text-align: right; }
 
 .blogpost h1 { padding: 0; border: 0; }
 .blogpost h2 { text-transform: none; }
