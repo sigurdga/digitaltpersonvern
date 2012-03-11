@@ -352,6 +352,8 @@ div.meta { font-size: 0.8em; }
 #blog { margin-top: -7px; }
 #blog h1 { padding-bottom: 8px; margin-bottom: 0; border-bottom: 8px solid #de8b19; }
 
+.error-message { border-bottom: 1px dotted #df7d7d; border-width: 1px 0; border-style: solid; border-color: #d57d7d; background-color: #ffdfdf; margin: 0 0 1.5em; padding: 7px }
+
 
 /* =============================================================================
    Non-semantic helper classes
