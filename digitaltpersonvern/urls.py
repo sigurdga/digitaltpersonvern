@@ -6,6 +6,8 @@ from django.conf import settings
 admin.autodiscover()
 
 from views import IndexView
+from feeds import LatestEntriesFeed
+
 from samklang_pages.views import page
 
 urlpatterns = patterns('',
@@ -27,6 +29,9 @@ urlpatterns = patterns('',
     url(r'^donate/', include('samklang_payment.urls')),
     #url(r'^$', IndexView.as_view()),
     url(r'^$', page, kwargs={'url': '/'}),
+
+    # feeds
+    url(r'^feed/blogg/$', LatestEntriesFeed()),
 )
 
 if settings.DEVELOPMENT_MODE:
