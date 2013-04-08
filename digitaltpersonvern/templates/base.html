@@ -29,14 +29,14 @@
 
         <header>
         {% if request.user.is_authenticated %}<div id="userinfo">
-            <a href="{% url blog-entry-archive-index %}">Blogg</a> –
-            <a href="{% url pages-page-list %}">Sider</a> –
-            <a href="{% url menu-list %}">Meny</a> –
-            <a href="{% url media-file-list %}">Filer</a> –
-            <a href="{% url payment-campaign-list %}">Donasjoner</a> –
+            <a href="{% url 'blog-entry-archive-index' %}">Blogg</a> –
+            <a href="{% url 'pages-page-list' %}">Sider</a> –
+            <a href="{% url 'menu-list' %}">Meny</a> –
+            <a href="{% url 'media-file-list' %}">Filer</a> –
+            <a href="{% url 'payment-campaign-list' %}">Donasjoner</a> –
             Logget inn som {{ request.user }} – 
-            <a href="{% url password_change %}">Bytt passord</a> –
-            <a href="{% url logout %}">Logg ut</a></div>{% endif %}
+            <a href="{% url 'password_change' %}">Bytt passord</a> –
+            <a href="{% url 'logout' %}">Logg ut</a></div>{% endif %}
         <a href="/"><img id="logo" src="{{ STATIC_URL}}img/logo.main.digitalt.personvern.110x113px.png"></a>
 	</header>
 
@@ -75,7 +75,7 @@
 
 	<footer id="footer">
     <div id="loginicon">
-        <a href="{% url login %}?next={{ request.path_info }}"><img src="{{ STATIC_URL }}img/favicon.png" alt="login"></a>
+        <a href="{% url 'login' %}?next={{ request.path_info }}"><img src="{{ STATIC_URL }}img/favicon.png" alt="login"></a>
     </div>
     <div id="footer-blocks">
         <div>
