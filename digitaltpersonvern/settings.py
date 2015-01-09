@@ -11,6 +11,7 @@ except:
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 DEVELOPMENT_MODE = False
+ALLOWED_HOSTS = ['www.digitaltpersonvern.no']
 
 ADMINS = (
     ('Sigurd Gartmann', 'sigurdga-digitaltpersonvern@sigurdga.no'),

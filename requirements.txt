@@ -1,4 +1,4 @@
-Django==1.5.1
+Django==1.5.12
 BeautifulSoup==3.2.0
 Markdown==2.0.3
 South==0.7.3
