@@ -1,4 +1,5 @@
 /env
+/venv
 /backup
 *.pyc
 *.swp
