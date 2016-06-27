@@ -5,7 +5,7 @@
     vars:
       - project_home: /srv/digipers
         project_name: digitaltpersonvern
-        server_name: digitaltpersonvern.no
+        server_name: www.digitaltpersonvern.no
         user: digipers
         settings_module: digitaltpersonvern.settings
 
