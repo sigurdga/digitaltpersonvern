@@ -8,6 +8,7 @@ django-mptt==0.4.2
 django-uni-form==0.9.0
 django-taggit==0.9.3
 django-taggit-templatetags==0.4.6dev
+gunicorn==19.6.0
 psycopg2==2.6.1
 pyRFC3339==0.1
 python-magic==0.4.6
