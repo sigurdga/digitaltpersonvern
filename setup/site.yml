@@ -23,6 +23,9 @@
       - name: Add an unfinished file, to allow cleanup on successful finalize
         file: path={{ deploy_helper.new_release_path }}/{{ deploy_helper.unfinished_filename }} state=touch
 
+      - name: Add shared media folder
+        file: path={{ project_home }}/shared/media state=directory
+
       - name: Install requirements
         pip:
           requirements: "{{ deploy_helper.new_release_path }}/requirements.txt"
@@ -38,6 +41,9 @@
         with_items:
           - migrate
           - collectstatic
+
+      - name: Symlink media folder
+        file: path={{ deploy_helper.new_release_path }}/public/media src={{ project_home }}/shared/media state=link
 
       - name: Copy nginx config
         remote_user: sigurdga
