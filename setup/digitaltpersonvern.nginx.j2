@@ -1,10 +1,10 @@
 server {
-        listen 8080;
-        listen   [::]:8080;
+        listen 80;
+        listen   [::]:80;
         server_name {{ server_name }} www.{{server_name}};
 
         location ~ /.well-known {
-            root {{ deploy_helper.current_path }}/public/static;
+            root {{ deploy_helper.current_path }}/{{ project_name }}/static-project;
             allow all;
         }
 
