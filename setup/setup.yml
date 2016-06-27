@@ -1,0 +1,48 @@
+---
+  - name: Setup digipers user
+    hosts: web
+    become: yes
+    vars:
+      - project_home: '/srv/digipers'
+
+    tasks:
+      - name: Remove apache
+        apt: name={{ item }} state=absent
+        with_items:
+          - apache2
+          - apache2-bin
+          - apache2-utils
+          - apache2-data
+
+      - name: Install dependencies
+        apt: name={{ item }} state=present
+        with_items:
+          - python-virtualenv
+          - python-psycopg2 # for ansible
+          - postgresql-9.5
+          - postgresql-server-dev-9.5
+          - nginx
+          - acl
+
+      - name: Create user
+        user:
+          name=digipers
+          comment="Digipers automated user"
+          system=yes
+          generate_ssh_key=yes
+          ssh_key_bits=4096
+          home={{ project_home }}
+
+      - name: Add key
+        authorized_key: user=digipers key="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC6FA2v+ehx8glCCIo+2P/qzHA5Ym4MmjNZ5Yjmbxxe53ke78HYrDa2hA1t0q0GycXCoxlql6pmcVKdWLxTLRvrD73l7YNOE1D7G6RZuSSs7zdRrn64sQGFdMV4jEjAyrxnrTgR+SMUc79r3gNsrl/29BmbAaYKifGuRL4RCGLTdYi3iXpOdNLy0e0OQpQkuuSrdIx18pKZ6F83ocSTH1hfSNt6H08PaSDVk6ueFWDASUmUUCLnF17J3oJlLlxtBuW6tLE7qDVoBWp8K+mwNqnCnJE27Fgl8+fOGanQnD7cAfXx4BmYcgWcB++2NfHNWEBmWN36XcJUjhjnQ1CAu3gnGRfeVCamjW3YEgDHnfX7Koj8LPFgtlfL0d3Lsu+5FIufXtrp8r2IoBQd+z0JgryTwt1Nxu57KChvTnKvzj1Wm+0HPr/p5svlGhWgd+IPSRXF0HaRZedmzmVOvROMaTi5vm1UWaL/ojzGqJM4T/KAfbua7n8+PALctkCtX0uj4r9si6hUrt3hBDGZLykuUKE0O9dCC+hEicIVHPCgAspMChf7HZk4NivrYr2Lxj0UY4eCBTdignw55hzmLvYIPuoZwdK7vzaMM5ag6Mu7BTCBdYDW/ra+YjULxl+mlbGZ62ahVRozaCnoLWfkUUURlwFq78z1ZxkI6EyhN+dZipL3Hw== sigurdga@svart"
+
+      - name: Add nginx user to new group
+        user: name=nginx groups=digipers
+
+      - name: Setup postgresql user
+        postgresql_user: name=digipers
+        become_user: postgres
+
+      - name: Setup postgresql database
+        postgresql_db: name=digipers owner=digipers
+        become_user: postgres
