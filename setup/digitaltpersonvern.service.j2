@@ -1,0 +1,16 @@
+[Unit]
+Description=gunicorn daemon for running {{ project_name }} project
+Requires=nginx.service postgresql.service
+Before=nginx.service
+After=network.target
+After=postgresql.service
+
+[Service]
+User={{ user }}
+Group=nginx
+WorkingDirectory={{ deploy_helper.new_release_path }}
+Environment=DJANGO_SETTINGS_MODULE={{ settings_module }}
+ExecStart={{ deploy_helper.new_release_path }}/venv/bin/gunicorn --workers 3 --bind unix:{{ deploy_helper.shared_path }}/{{ project_name }}.sock {{ project_name }}.wsgi
+
+[Install]
+WantedBy=multi-user.target

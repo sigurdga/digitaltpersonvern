@@ -1,0 +1,84 @@
+---
+  - name: Deploy digitaltpersonvern
+    hosts: web
+    remote_user: digipers
+    vars:
+      - project_home: /srv/digipers
+        project_name: digitaltpersonvern
+        server_name: digitaltpersonvern.no
+        user: digipers
+        settings_module: digitaltpersonvern.settings
+
+    tasks:
+      - name: Initialize the deploy root and gather facts
+        deploy_helper: path={{ project_home }}
+
+      - name: Checkout code
+        git:
+          repo=ssh://git@github.com/sigurdga/digitaltpersonvern
+          depth=1
+          accept_hostkey=yes
+          dest={{ deploy_helper.new_release_path }}
+
+      - name: Add an unfinished file, to allow cleanup on successful finalize
+        file: path={{ deploy_helper.new_release_path }}/{{ deploy_helper.unfinished_filename }} state=touch
+
+      - name: Install requirements
+        pip:
+          requirements: "{{ deploy_helper.new_release_path }}/requirements.txt"
+          virtualenv: "{{ deploy_helper.new_release_path }}/venv"
+          virtualenv_python: python2
+
+      - name: Migrate and collect
+        django_manage:
+          command={{ item }}
+          app_path={{ deploy_helper.new_release_path }}/{{ project_name }}
+          virtualenv={{ deploy_helper.new_release_path }}/venv
+          settings={{ settings_module }}
+        with_items:
+          - migrate
+          - collectstatic
+
+      - name: Copy nginx config
+        remote_user: sigurdga
+        become: yes
+        template: src={{ project_name }}.nginx.j2 dest=/etc/nginx/sites-available/{{ project_name }} owner=root mode=644
+        notify:
+          - reload nginx
+
+      - name: Symlink nginx config
+        file: path=/etc/nginx/sites-enabled/{{ project_name }} src=/etc/nginx/sites-available/{{ project_name }} state=link
+        remote_user: sigurdga
+        become: yes
+        notify:
+          - reload nginx
+
+      - name: Copy systemd config
+        remote_user: sigurdga
+        become: yes
+        template: src={{ project_name }}.service.j2 dest=/etc/systemd/system/{{ project_name }}.service owner=root mode=644
+        notify:
+          - reload systemd daemon
+          - reload systemd service
+
+      - name: Finalize the deploy, removing the unfinished file and switching the symlink
+        deploy_helper: path={{ project_home }} release={{ deploy_helper.new_release }} state=finalize
+        notify:
+          - reload systemd service
+
+    handlers:
+      - name: reload systemd daemon
+        command: systemctl daemon-reload
+        remote_user: sigurdga
+        become: yes
+
+      - name: reload systemd service
+        service: name={{ project_name }} state=restarted enabled=true
+        remote_user: sigurdga
+        become: yes
+
+      - name: reload nginx
+        service: name=nginx state=reloaded
+        remote_user: sigurdga
+        become: yes
+

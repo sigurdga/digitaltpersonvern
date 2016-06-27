@@ -33,8 +33,11 @@
           ssh_key_bits=4096
           home={{ project_home }}
 
-      - name: Add key
-        authorized_key: user=digipers key="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC6FA2v+ehx8glCCIo+2P/qzHA5Ym4MmjNZ5Yjmbxxe53ke78HYrDa2hA1t0q0GycXCoxlql6pmcVKdWLxTLRvrD73l7YNOE1D7G6RZuSSs7zdRrn64sQGFdMV4jEjAyrxnrTgR+SMUc79r3gNsrl/29BmbAaYKifGuRL4RCGLTdYi3iXpOdNLy0e0OQpQkuuSrdIx18pKZ6F83ocSTH1hfSNt6H08PaSDVk6ueFWDASUmUUCLnF17J3oJlLlxtBuW6tLE7qDVoBWp8K+mwNqnCnJE27Fgl8+fOGanQnD7cAfXx4BmYcgWcB++2NfHNWEBmWN36XcJUjhjnQ1CAu3gnGRfeVCamjW3YEgDHnfX7Koj8LPFgtlfL0d3Lsu+5FIufXtrp8r2IoBQd+z0JgryTwt1Nxu57KChvTnKvzj1Wm+0HPr/p5svlGhWgd+IPSRXF0HaRZedmzmVOvROMaTi5vm1UWaL/ojzGqJM4T/KAfbua7n8+PALctkCtX0uj4r9si6hUrt3hBDGZLykuUKE0O9dCC+hEicIVHPCgAspMChf7HZk4NivrYr2Lxj0UY4eCBTdignw55hzmLvYIPuoZwdK7vzaMM5ag6Mu7BTCBdYDW/ra+YjULxl+mlbGZ62ahVRozaCnoLWfkUUURlwFq78z1ZxkI6EyhN+dZipL3Hw== sigurdga@svart"
+      - name: Add keys
+        authorized_key: user=digipers key={{ item }}
+        with_items:
+          - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC6FA2v+ehx8glCCIo+2P/qzHA5Ym4MmjNZ5Yjmbxxe53ke78HYrDa2hA1t0q0GycXCoxlql6pmcVKdWLxTLRvrD73l7YNOE1D7G6RZuSSs7zdRrn64sQGFdMV4jEjAyrxnrTgR+SMUc79r3gNsrl/29BmbAaYKifGuRL4RCGLTdYi3iXpOdNLy0e0OQpQkuuSrdIx18pKZ6F83ocSTH1hfSNt6H08PaSDVk6ueFWDASUmUUCLnF17J3oJlLlxtBuW6tLE7qDVoBWp8K+mwNqnCnJE27Fgl8+fOGanQnD7cAfXx4BmYcgWcB++2NfHNWEBmWN36XcJUjhjnQ1CAu3gnGRfeVCamjW3YEgDHnfX7Koj8LPFgtlfL0d3Lsu+5FIufXtrp8r2IoBQd+z0JgryTwt1Nxu57KChvTnKvzj1Wm+0HPr/p5svlGhWgd+IPSRXF0HaRZedmzmVOvROMaTi5vm1UWaL/ojzGqJM4T/KAfbua7n8+PALctkCtX0uj4r9si6hUrt3hBDGZLykuUKE0O9dCC+hEicIVHPCgAspMChf7HZk4NivrYr2Lxj0UY4eCBTdignw55hzmLvYIPuoZwdK7vzaMM5ag6Mu7BTCBdYDW/ra+YjULxl+mlbGZ62ahVRozaCnoLWfkUUURlwFq78z1ZxkI6EyhN+dZipL3Hw== sigurdga@svart"
+          - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC7T3GkxDdPPSqGVL+VR62VnEOUWLHgSJgvOVBbAtWHDn70qGHebkeX1cNdpl7C9YLz3uKg0allRk5dNK0HBH4fdl/wSaLbL+kBgEh6T1LqIFFZWS+J67fnON1RqRGsJ2XRW/6gSh9p8ZO7g9H76+kFe6MuZsjT6T+o3LL17Laxcccv9pBJb1y5qE88nU4XOeMPXdRLsD8ISF87UqcndDQhbNFbCABqJf9Q5hnoGoGRY1eFotfFfbiK4a6rt5zZ4pY93GwWrTy1u2S2cGjq3RsSQ00FZ4+h2zInQSL9wEMgmCJJqDVyEGUyW7x3TAfmM0kiYxllkmSMzVcHh86L4nwkJQCG9vwzhyX1qGyP3WsUb6mgZ+45yCkYQzoR+U+bePA5oJfubIQhsXElh7xd/+vUEIhTMOzaPIH+UfyqQDzF1ONDJ4Uqc9XptQJBFcBegMJzAv//nGMS7h8BhOItrmflJ2wvvGVWwiEF0fJcvB4adUqnr99eRtKjqiT9/l0Be7XXzzFNd49qaa4+zgx6gxf2vCC7dhFsRr6saeaDd22KajOlAAOluuq4LP+dMES5//c28TPpHs7IGaCmyemCHF3BsnWmtq2nDJX7XPG5XNAAQf3f8W7fQFJ/SgKp35cLRhz+0GYcM3TgO+K58mMmxb6DPk/v0eRUtg2sWh36WtU98Q== sigurdga@nemi"
 
       - name: Add nginx user to new group
         user: name=nginx groups=digipers
