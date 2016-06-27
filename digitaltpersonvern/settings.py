@@ -2,11 +2,6 @@
 
 import json
 import os
-try:
-    with open(os.path.expanduser('~/environment.json')) as f:
-        env = json.load(f)
-except:
-    env = None
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
@@ -19,17 +14,15 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-if env:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'template1',
-            'USER': env['DOTCLOUD_DB_SQL_LOGIN'],
-            'PASSWORD': env['DOTCLOUD_DB_SQL_PASSWORD'],
-            'HOST': env['DOTCLOUD_DB_SQL_HOST'],
-            'PORT': int(env['DOTCLOUD_DB_SQL_PORT']),
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'digipers',
+        'USER': 'digipers',
     }
+}
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -56,7 +49,7 @@ USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = '/home/dotcloud/data/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'public', 'media')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -67,7 +60,7 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = '/home/dotcloud/data/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'public', 'static')
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -187,4 +180,3 @@ try:
     from local_settings import *
 except ImportError:
     pass
-
