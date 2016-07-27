@@ -10,6 +10,11 @@
         settings_module: digitaltpersonvern.settings
 
     tasks:
+      - name: Check password
+        shell: ls
+        remote_user: sigurdga
+        become: yes
+
       - name: Initialize the deploy root and gather facts
         deploy_helper: path={{ project_home }}
 
@@ -35,7 +40,7 @@
       - name: Migrate and collect
         django_manage:
           command={{ item }}
-          app_path={{ deploy_helper.new_release_path }}/{{ project_name }}
+          app_path={{ deploy_helper.new_release_path }}
           virtualenv={{ deploy_helper.new_release_path }}/venv
           settings={{ settings_module }}
         with_items:
