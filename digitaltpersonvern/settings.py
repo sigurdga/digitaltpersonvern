@@ -175,6 +175,11 @@ LOGGING = {
 LOGIN_URL = '/inn/'
 LOGIN_REDIRECT_URL = '/'
 
+SOUTH_MIGRATION_MODULES = {
+    'taggit': 'taggit.south_migrations',
+}
+
+
 try:
     from local_settings import *
 except ImportError:
