@@ -11,6 +11,7 @@ Group=nginx
 WorkingDirectory={{ deploy_helper.new_release_path }}
 Environment=DJANGO_SETTINGS_MODULE={{ settings_module }}
 ExecStart={{ deploy_helper.new_release_path }}/venv/bin/gunicorn --workers 3 --bind unix:{{ deploy_helper.shared_path }}/{{ project_name }}.sock {{ project_name }}.wsgi
+Restart=always
 
 [Install]
 WantedBy=multi-user.target
